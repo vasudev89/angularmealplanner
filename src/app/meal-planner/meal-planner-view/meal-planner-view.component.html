@@ -18,7 +18,9 @@
       [name]="name"
       [events]="events"
       [date]="day.date"
-      *ngIf="!day.hidden"
+      (hidden)="doSomething($event)"
+      *ngIf="!hidden"
+      
     ></app-meal-planner-cell>
   </ng-container>
 </div>

@@ -1,4 +1,8 @@
-<section class="calendar-cell" *ngIf="config.noMeals || breakfastMeals || lunchMeals || dinnerMeals">
+<!-- {{this.config.noMeals || this.breakfastMeals == undefined || this.lunchMeals == undefined || this.dinnerMeals == undefined }} -->
+<!-- {{( this.config.noMeals || (this.breakfastMeals != undefined || this.lunchMeals != undefined || this.dinnerMeals != undefined) )  }} -->
+<!-- {{ hideme }} -->
+
+<section *ngIf="( this.config.noMeals || (this.breakfastMeals != undefined || this.lunchMeals != undefined || this.dinnerMeals != undefined) )" class="calendar-cell" >
   <header>
     <h3 *ngIf="config.openMealPlans.indexOf(name) == -1" class="header">{{name}}</h3>
     <p class="calendar-date-info dateDisplay">

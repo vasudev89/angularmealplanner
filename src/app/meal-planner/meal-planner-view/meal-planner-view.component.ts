@@ -38,10 +38,15 @@ export class MealPlannerViewComponent implements OnInit, OnDestroy {
 
   calendar:CalendarMonth;
 
+  public doSomething(setVal: any):void {
+      this.hidden = setVal;
+      console.log(setVal);
+  }
+
   ngOnInit() {
     this.calendar = new CalendarMonth(this.config.date);
     
-    this.calendar.hidden = false;
+    this.calendar.hidden = true;
 
     this.dateRangeSubscription = this.config.dateRange.subscribe(range => {
       this.startDate = range.from;
