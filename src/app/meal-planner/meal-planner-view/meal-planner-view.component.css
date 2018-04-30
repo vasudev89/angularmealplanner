@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  text-align: center;
+}
+
+.calendar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: initial;
+  margin-bottom: 4em;
+
+  
+}
+
+app-meal-planner-cell {
+  display: block;
+  padding: 0.2em;
+  flex-basis: calc(100%/7);
+  flex-grow: 1;
+  min-width: 180px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+app-meal-planner-cell.hidden {
+  display: none;
+}
+
+@media(min-width:992px) {
+  app-meal-planner-cell {
+    flex-grow: unset;
+  }
+}
+
+.btn {
+  line-height: 1em;
+  font-size: 2em;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 100%;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.btn1 {
+
+  line-height: 2em;
+  font-size: 1em;
+  position: absolute;
+  margin-right: -30px;
+
+  border-radius: 50%;
+  
+
+  display: inline-block;
+    padding: 6px 6px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.32857143;
+    width: 35px;
+    height: 35px;
+
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    /* border-radius: 4px; */
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn-week {
+  right: 0em;
+  bottom: 0em;
+  transition: right 0.3s, bottom 0.3s, left 0.3s, top 0.3s;
+}
+
+.btn-month {
+  bottom: 0em;
+  left: 0px;
+  border-radius: 0px;
+  bottom: 0px;
+  width: 60%;
+  margin-bottom: -20px;
+  margin-left: 15px;
+}
+
+.single {
+  /* margin-right: 3em; */
+
+  max-width: 180px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.single app-meal-planner-cell {
+  /* min-width: 180px; */
+}
+
+.single .btn-week {
+  /* left: 50%; */
+  width: 50%;
+  border-radius: 0px;
+  bottom: 0px;
+  margin-bottom: -20px;
+  right: 0px;
+}

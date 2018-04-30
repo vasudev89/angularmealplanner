@@ -1,0 +1,124 @@
+.toolbar {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5em;
+  padding: 0.3em;
+  background-color: #fff;
+  box-shadow: 0px 0px 0px gray;
+}
+
+.toolbar-commands-set {
+  /* background-color: #fbfbfb; */
+  display: inline-block;
+  border: 0px solid #eee;
+  font-size: 1.1em;
+  margin: 0.1em;
+  text-align: center;
+}
+
+.toolbar-commands-set label {
+  padding-right: 0.5em;
+  border-right: 1px solid #eee;
+  /* display: none; */
+}
+
+.toolbar-commands-set > * {
+  vertical-align: middle;
+  padding: 0.3em;
+}
+
+.commands {
+  display: inline-block;
+}
+
+.toolbar-btn {
+  font-family: 'PT Sans', sans-serif;
+  cursor: pointer;
+  padding: 0.1em 0.5em;
+  color: #FFC706;
+  display: inline-block;
+  border: 1px solid #FFC706;
+  margin-right: -5px;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.dateInp{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.1em;
+  /* cursor: pointer; */
+  padding: 0.1em 0.1em;
+  max-height: 50px;
+  color: #770000;
+  display: inline-block;
+  border: 1px solid #FFC706;
+  margin-right: -5px;
+  transition: 0.5s;
+  padding-left: 10px;
+  margin-left: 10px;
+
+  border-radius: 5px;
+  /* width: 500px; */
+}
+
+.toolbar-btn.semiActive {
+  color: #444;
+}
+
+.toolbar-btn.active {
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 1px white;
+  background: #FFC706;
+  transition: 0.5s;
+}
+
+.toolbar-btn-date {
+  font-family: 'PT Sans', sans-serif;
+  cursor: pointer;
+  padding: 0.1em 0.5em;
+  color: #770000;
+  background: linear-gradient(90deg, #FFF 60%, #FFC706 40%);
+  display: inline-block;
+  border: 1px solid #FFC706;
+  margin-right: -5px;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.toolbar-btn-date.semiActive {
+  color: #FFC706;
+  background: linear-gradient(90deg, #FFF 100%, #FFC706 50%);
+  transition: 0.5s;
+}
+
+.toolbar-btn-date.active {
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 1px white;
+  background: #FFC706;
+  background: linear-gradient(90deg, #FFC706 50%, #FFC706 50%);
+  transition: 0.5s;
+}
+
+.date-range .commands {
+  display: inline-flex;
+  padding: 0;
+}
+
+.date-range input {
+  line-height: 1.65em;
+  width: 2.5em;
+  border: none;
+  font-size: 1.05em;
+  margin: 0 0.2em;
+}
+
+.date-range input:first-of-type {
+  border-right: 0px solid #eee;
+}
+
+@media (min-width: 992px) {
+  .toolbar-commands-set label {
+    display: inline-block;
+  }
+}

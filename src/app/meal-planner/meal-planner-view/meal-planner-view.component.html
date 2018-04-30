@@ -1,0 +1,24 @@
+<div class="calendar" [class.single]="endDate - startDate === 0">
+    <h3 style="width: 100%; margin-bottom: 20px; margin-left: 20px; font-family: 'Montserrat Alternates', sans-serif; text-align: center; font-size: 36px;" *ngIf="config.openMealPlans.indexOf(name) != -1" class="header">{{name}}</h3>
+  
+    <br>
+
+    <br>
+  
+    <button class="btn1 btn-danger btn-week" (click)="toggleWeek(i)"><span [ngClass]=" isWeekExpanded || isMonthExpanded ? 'glyphicon glyphicon-chevron-left': 'glyphicon glyphicon-chevron-right'"></span></button>
+  <button class="btn1 btn-danger btn-month" (click)="toggleMonth(i)"><span [ngClass]=" isWeekExpanded || isMonthExpanded ? 'glyphicon glyphicon-chevron-up': 'glyphicon glyphicon-chevron-down'"></span></button>
+
+  <!-- <fa-icon [icon]="isWeekExpanded || isMonthExpanded ? iconLeft : iconRight" class="btn btn-week" (click)="toggleWeek()"></fa-icon> -->
+  <!-- <fa-icon [icon]="isMonthExpanded ? iconUp : iconDown" class="btn btn-month" (click)="toggleMonth()"></fa-icon> -->
+
+  <ng-container *ngFor="let day of calendar.days">
+    <app-meal-planner-cell 
+      [class.hidden]="!isDayInRange(day)"
+      [config]="config"
+      [name]="name"
+      [events]="events"
+      [date]="day.date"
+      *ngIf="!day.hidden"
+    ></app-meal-planner-cell>
+  </ng-container>
+</div>

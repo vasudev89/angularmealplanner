@@ -1,0 +1,96 @@
+<div class="toolbar">
+  <div class="toolbar-commands-set">
+    <div class="commands">
+      <!-- <fa-icon title="Breakfast" [icon]="iconBreakfast" class="toolbar-btn" (click)="toggleConfig('breakfast')" [class.active]="config.breakfast">B</fa-icon>
+      <fa-icon title="Lunch" [icon]="iconLunch" class="toolbar-btn" (click)="toggleConfig('lunch')" [class.active]="config.lunch">L</fa-icon>
+      <fa-icon title="Dinner" [icon]="iconDinner" class="toolbar-btn" (click)="toggleConfig('dinner')" [class.active]="config.dinner">D</fa-icon> -->
+
+      <button style="border-radius: 10px 0px 0px 10px;" class="toolbar-btn" (click)="toggleConfig('breakfast')" [class.active]="config.breakfast">Breakfast</button>
+      <button class="toolbar-btn" (click)="toggleConfig('lunch')" [class.active]="config.lunch">Lunch</button>
+      <button style="border-radius: 0px 10px 10px 0px;" class="toolbar-btn" (click)="toggleConfig('dinner')" [class.active]="config.dinner">Dinner</button>
+      
+    </div>
+  </div>
+
+
+  <div class="toolbar-commands-set">
+    
+    <div class="commands">
+
+    <button style="border-radius: 10px;" class="toolbar-btn-date" [class.semiActive]="config.dateInfoMode === DATE_INFO_MODE.date"
+      [class.active]="config.dateInfoMode === DATE_INFO_MODE.both" (click)="toggleDateInfoMode()">
+      
+      {{ date | date : (config.dateInfoMode == 0 ? 'E' : ( config.dateInfoMode == 1 ? 'mediumDate' : 'MMM d, y E') )}}
+    
+      &nbsp;
+
+      <fa-icon title="Date Format" [icon]="iconCalendar" ></fa-icon>
+
+    </button>
+
+    
+    </div>
+  </div>
+
+  <div class="toolbar-commands-set date-range">
+    
+    <div class="commands">
+      <span class="dateInp">
+        
+
+        &nbsp;
+        {{dateRange.from}}
+        
+        <button (click)="changeRangeMin( dateRange.from-1 )" style="outline:none; color: #770000;" class="btn btn-link"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+        <button (click)="changeRangeMin( dateRange.from+1)" style="outline:none; color: #770000;" class="btn btn-link"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+
+        <!-- <input title="Start Date" style="width: 70px;" type="number" class="dateInp" [value]="dateRange.from" (input)="changeRangeMin($event)"> -->
+      
+        
+      </span>
+
+      <span class="dateInp">
+        
+
+          &nbsp;
+          {{dateRange.to}}
+          
+          <button (click)="changeRangeMax(dateRange.to-1 )" style="outline:none; color: #770000;" class="btn btn-link"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+          <button (click)="changeRangeMax(dateRange.to+1 )" style="outline:none; color: #770000;" class="btn btn-link"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+  
+          <!-- <input title="Start Date" style="width: 70px;" type="number" class="dateInp" [value]="dateRange.from" (input)="changeRangeMin($event)"> -->
+        
+          
+        </span>
+      
+      <!-- <input title="End Date" style="width: 70px;" type="number" class="dateInp" [value]="dateRange.to" (input)="changeRangeMax($event)"> -->
+    </div>
+  </div>
+
+  <div class="toolbar-commands-set">
+      <div class="commands">
+        
+        <button style="border-radius: 10px 0px 0px 10px;" class="toolbar-btn" (click)="toggleConfig('noMeals')" [class.active]="config.noMeals">No Meals</button>
+        <button style="border-radius: 0px 10px 10px 0px;" class="toolbar-btn" (click)="toggleConfig('dinner')" [class.active]="config.dinner">Show All</button>
+        
+      </div>
+    </div>
+
+  <div class="toolbar-commands-set" style="float: right; margin-right: 10px;">
+      <div class="commands">
+        <!-- <fa-icon title="Breakfast" [icon]="iconBreakfast" class="toolbar-btn" (click)="toggleConfig('breakfast')" [class.active]="config.breakfast">B</fa-icon>
+        <fa-icon title="Lunch" [icon]="iconLunch" class="toolbar-btn" (click)="toggleConfig('lunch')" [class.active]="config.lunch">L</fa-icon>
+        <fa-icon title="Dinner" [icon]="iconDinner" class="toolbar-btn" (click)="toggleConfig('dinner')" [class.active]="config.dinner">D</fa-icon> -->
+  
+        <button style="border-radius: 10px 0px 0px 10px;" class="toolbar-btn" (click)="toggleConfigDay('mon')" [class.active]="config.mon">M</button>
+        <button class="toolbar-btn" (click)="toggleConfigDay('tue')" [class.active]="config.tue">T</button>
+        <button class="toolbar-btn" (click)="toggleConfigDay('wed')" [class.active]="config.wed">W</button>
+        <button class="toolbar-btn" (click)="toggleConfigDay('thu')" [class.active]="config.thu">T</button>
+        <button class="toolbar-btn" (click)="toggleConfigDay('fri')" [class.active]="config.fri">F</button>
+        <button class="toolbar-btn" (click)="toggleConfigDay('sat')" [class.active]="config.sat">S</button>
+        <button style="border-radius: 0px 10px 10px 0px;" class="toolbar-btn" (click)="toggleConfigDay('sun')" [class.active]="config.sun">S</button>
+        
+      </div>
+    </div>
+
+</div>

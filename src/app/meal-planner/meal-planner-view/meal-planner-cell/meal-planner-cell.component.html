@@ -1,0 +1,21 @@
+<section class="calendar-cell" *ngIf="config.noMeals || breakfastMeals || lunchMeals || dinnerMeals">
+  <header>
+    <h3 *ngIf="config.openMealPlans.indexOf(name) == -1" class="header">{{name}}</h3>
+    <p class="calendar-date-info dateDisplay">
+      <span *ngIf="config.dateInfoMode === DATE_INFO_MODE.date || config.dateInfoMode === DATE_INFO_MODE.both">{{date | date: 'mediumDate'}}</span>
+      <span *ngIf="config.dateInfoMode === DATE_INFO_MODE.day || config.dateInfoMode === DATE_INFO_MODE.both">{{date | date: 'E'}}</span>
+    </p>
+  </header>
+  <div class="content">
+    <div *ngIf="config.breakfast">
+      <p *ngFor="let meal of breakfastMeals" >{{meal.name}} <img style="border: none; box-shadow: 0px 0px 1px grey; padding: 0px; margin-top: 5px;" class="img img-thumbnail" src="/assets/{{meal.img}}"> </p>
+    </div>
+    <div *ngIf="config.lunch">
+      <p *ngFor="let meal of lunchMeals" >{{meal.name}} <img style="border: none; box-shadow: 0px 0px 1px grey; padding: 0px; margin-top: 5px;" class="img img-thumbnail" src="/assets/{{meal.img}}"></p>
+    </div>
+    <div *ngIf="config.dinner">
+      <p *ngFor="let meal of dinnerMeals" >{{meal.name}} <img style="border: none; box-shadow: 0px 0px 1px grey; padding: 0px; margin-top: 5px;" class="img img-thumbnail" src="/assets/{{meal.img}}"></p>
+    </div>
+    <p class="empty-msg" *ngIf="(!breakfastMeals && !lunchMeals && !dinnerMeals) || (!config.breakfast && !config.lunch && !config.dinner)">No Meals</p>
+  </div>
+</section>
